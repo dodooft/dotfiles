@@ -1,0 +1,79 @@
+# Media keys
+
+XF86Audio{Prev,Next,Play,Stop}
+    playerctl {previous,next,play-pause,stop}
+XF86AudioMute
+    pamixer -t
+XF86Audio{Lower,Raise}Volume
+    pamixer {-d,-i} 5
+XF86MonBrightness{Up,Down}
+    lux {-a,-s} 100
+XF86TouchpadToggle
+    .bin/touchpad_toggle.sh
+
+# wm independent hotkeys
+#
+
+# program launcher
+super + space
+	rofi -show drun -terminal termite -lines 8 -width 500
+# terminal
+ctrl + super + Return
+    termite
+
+Print
+    gnome-screenshot --interactive
+
+# make sxhkd reload its configuration files:
+ctrl + super + Escape
+	pkill -USR1 -x sxhkd
+
+# bspwm hotkeys
+#
+# Lock Screen
+super + l
+    $HOME/Guit/PC/scripts/lock.sh
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous desktop
+ctrl + alt + {Left,Right}
+    ~/Guit/PC/scripts/mdesk.sh 1 {prev,next}
+
+ctrl + alt + {Down,Up}
+    ~/Guit/PC/scripts/mdesk.sh 2 {prev,next}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# send and focus to desktop
+super + shift + {1-9,0}
+    F=`bspc query -N -n`;\
+    D={1-9,10} && bspc node -d ^$D && bspc desktop -f ^$D;\
+    bspc node -f $F
+
+super + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
+
+# send to next desktop
+ctrl + alt + shift + {Left,Right}
+    F=`bspc query -N -n`;\
+    D=`bspc query -D -d {prev,next}`;\
+    bspc node -d $D && bspc desktop -f ^$D;\
+    bspc node -f $F
+
