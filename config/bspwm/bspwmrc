@@ -45,6 +45,7 @@ HIDEFILE="/tmp/panel_mpris"
 
 # Gnome keyring
 eval $(gnome-keyring-daemon --start)
+eval `ssh-agent`
 export SSH_AUTH_SOCK
 
 # For lemonbuddy in my laptop
