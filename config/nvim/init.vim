@@ -11,6 +11,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'itchyny/vim-cursorword'
 	Plug 'tpope/vim-fugitive'
+	Plug 'posva/vim-vue'
+	Plug 'terryma/vim-multiple-cursors'
+	Plug 'w0rp/ale'
 call plug#end()
 
 " Ui config
@@ -20,6 +23,7 @@ set nuw=4
 set mouse=n                   " use mouse
 let base16colorspace=256      " access colors present in 256 colorspace
 colorscheme base16-onedark
+syntax on
 highlight LineNr guibg=Ignore
 
 " Lightline
@@ -43,7 +47,7 @@ highlight GitGutterChangeDelete guibg=Ignore
 highlight NonText ctermfg=239 guifg=Grey30
 set list listchars=tab:\→\ ,nbsp:·,trail:·
 " Char to separe words
-set iskeyword=!-~,^*,^45,^124,^34,192-255,^_,^=,^/,^;,^:,^13,^10
+set iskeyword-=!-~,^*,^45,^124,^34,192-255,^_,^=,^/,^;,^:,^13,^10,>,<
 " Tab config
 set smarttab
 set tabstop=4
@@ -61,6 +65,9 @@ augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
 augroup END
+
+" Multi cursor
+let g:multi_cursor_next_key='<C-d>'
 
 " Commentary
 autocmd FileType c,cpp,verilog setlocal commentstring=\/\/\ %s
