@@ -70,7 +70,7 @@ if [[ $(hostname) == 'dada-laptop' ]]; then
     polybar laptop &
     xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 elif [[ $(hostname) == 'VLSI-1' ]]; then
-    bspc config -m 0x00200003 top_padding 0
+    bspc config -m 0x00200004 top_padding 0
     polybar vlsi &
 elif [[ $(hostname) == 'dada-pc' ]]; then
     polybar home &
