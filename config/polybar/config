@@ -204,13 +204,13 @@ click-left = oblogout.sh
 [module/mpris]
 type = custom/script
 exec = $HOME/.bin/mpris.sh
-interval = 0.5
+interval = 1
 ;tail = true
 format-background = #25A2A6
 format-padding = 3
 format= <label>
 click-left = playerctl play-pause
-click-right = mpris.sh -t
+click-right = $HOME/.bin/mpris.sh -t
 scroll-up = playerctl next
 scroll-down = playerctl previous
 

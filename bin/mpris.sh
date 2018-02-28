@@ -1,58 +1,53 @@
 #!/bin/sh
 
-SPOTIFY=`ps -A | grep spotify | tail -1 | awk '{print $4}'`
+HIDEFILE="/tmp/panel_mpris"
 
-if [[ -z $SPOTIFY ]]
-then
-    exit
+if [[ -z $(pgrep -x spotify) ]]; then
+	exit
 fi
 
 media()
 {
-    STATUS=`playerctl status` &> /dev/null
+	STATUS=$(playerctl status)
 
-    if [[ -z $STATUS ]]
-    then
-        exit
-    fi
+	if [[ -z $STATUS ]]; then
+		exit
+	fi
 
-    TITLE=`playerctl metadata title | cut -c 1-100` &> /dev/null
-    ARTIST=`playerctl metadata artist | cut -c 1-100` &> /dev/null
+	TITLE=$(playerctl metadata title | cut -c 1-100) &> /dev/null
+	ARTIST=$(playerctl metadata artist | cut -c 1-100) &> /dev/null
+	HIDE=$(cat $HIDEFILE)
 
-    INFO=""
-    HIDE=`cat $HIDEFILE`
+	if [[ $HIDE -eq 1 ]]; then
+		INFO="$ARTIST - $TITLE"
+	else
+		INFO=""
+	fi
 
-    if [[ $HIDE -eq 1 ]]
-    then
-        INFO="$ARTIST - $TITLE"
-    fi
+	if [[ $STATUS == "Paused" ]]; then
+		LINE="  $INFO"
+	else
+		LINE="  $INFO"
+	fi
 
-    if [[ $STATUS == "Paused" ]]
-    then 
-        LINE="$SPACES  $INFO$SPACES"
-    else
-        LINE="$SPACES  $INFO$SPACES"
-    fi
-
-    echo $LINE
+	echo $LINE
 }
 
 toggle_bar()
 {
-    HIDE=`cat $HIDEFILE`
-  
-  	if [[ $HIDE -eq 1 ]]
-    then
+	HIDE=`cat $HIDEFILE`
+
+	if [[ $HIDE -eq 1 ]]; then
 		echo 0 > $HIDEFILE
 	else
 		echo 1 > $HIDEFILE
-    fi
-
+	fi
 }
 
-if [[ $@ == "-t" ]]
-then
+if [[ $@ == "-t" ]]; then
 	$(toggle_bar)
 else
 	echo $(media)
 fi
+
+exit
