@@ -20,7 +20,7 @@ call plug#end()
 set termguicolors
 set number
 set nuw=4
-set mouse=n                   " use mouse
+set mouse=a                   " use mouse
 let base16colorspace=256      " access colors present in 256 colorspace
 colorscheme base16-onedark
 syntax on
