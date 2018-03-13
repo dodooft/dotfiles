@@ -56,7 +56,7 @@ fi
 xsetroot -cursor_name left_ptr &
 sxhkd &
 nitrogen --restore
-setxkbmap es
+setxkbmap latam
 
 i=1
 for monitor in $(bspc query -M); do
