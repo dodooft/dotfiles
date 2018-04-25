@@ -14,6 +14,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'posva/vim-vue'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'w0rp/ale'
+	Plug 'donRaphaco/neotex', { 'for': 'tex' }
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Ui config
@@ -25,6 +27,9 @@ let base16colorspace=256      " access colors present in 256 colorspace
 colorscheme base16-onedark
 syntax on
 highlight LineNr guibg=Ignore
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Lightline
 set noshowmode
