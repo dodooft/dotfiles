@@ -100,3 +100,5 @@ cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
 export _JAVA_AWT_WM_NONREPARENTING=1
 alias vivado="/home/Xilinx/Vivado/2017.3/bin/vivado"
 
+source /etc/profile.d/vte.sh
+
