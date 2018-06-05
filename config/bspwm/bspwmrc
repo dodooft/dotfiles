@@ -56,7 +56,6 @@ fi
 xsetroot -cursor_name left_ptr &
 sxhkd &
 nitrogen --restore
-setxkbmap latam
 
 i=1
 for monitor in $(bspc query -M); do
@@ -67,11 +66,14 @@ for monitor in $(bspc query -M); do
 done
 
 if [[ $(hostname) == 'dada-laptop' ]]; then
+    setxkbmap latam
     polybar laptop &
     xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 elif [[ $(hostname) == 'VLSI-1' ]]; then
+    setxkbmap latam
     bspc config -m 0x00200004 top_padding 0
     polybar vlsi &
 elif [[ $(hostname) == 'dada-pc' ]]; then
+    setxkbmap us
     polybar home &
 fi
