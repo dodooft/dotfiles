@@ -14,7 +14,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'posva/vim-vue'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'w0rp/ale'
-	Plug 'donRaphaco/neotex', { 'for': 'tex' }
+	Plug 'lervag/vimtex'
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
