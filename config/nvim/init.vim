@@ -23,6 +23,7 @@ set termguicolors
 set number
 set nuw=4
 set mouse=a                   " use mouse
+set colorcolumn=95
 let base16colorspace=256      " access colors present in 256 colorspace
 colorscheme base16-onedark
 syntax on
