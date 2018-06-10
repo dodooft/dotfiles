@@ -74,6 +74,6 @@ elif [[ $(hostname) == 'VLSI-1' ]]; then
     bspc config -m 0x00200004 top_padding 0
     polybar vlsi &
 elif [[ $(hostname) == 'dada-pc' ]]; then
-    setxkbmap us
+    setxkbmap -layout us -variant altgr-intl
     polybar home &
 fi
