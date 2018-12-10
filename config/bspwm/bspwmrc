@@ -34,7 +34,7 @@ bspc config normal_private_border_color     "#9B7046"
 # Rules
 #bspc rule -a Neovim     desktop=^2
 bspc rule -a Nitrogen   state=floating
-bspc rule -a Oblogout   layer=above focus=on monitor=1 state=fullscreen
+#bspc rule -a Oblogout   layer=above focus=on monitor=1 state=fullscreen
 #rm -f "$xwin_cache"
 
 # Script files
@@ -61,7 +61,7 @@ i=1
 for monitor in $(bspc query -M); do
     bspc monitor $monitor \
          -n "$i" \
-         -d $i/{1,2,3,4}
+         -d $i/{1,2,3,4,5}
     let i++
 done
 
@@ -69,9 +69,10 @@ if [[ $(hostname) == 'dada-laptop' ]]; then
     setxkbmap latam
     polybar laptop &
     xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
-elif [[ $(hostname) == 'VLSI-1' ]]; then
+elif [[ $(hostname) == 'VLSI-04' ]]; then
     setxkbmap latam
     bspc config -m 0x00200004 top_padding 0
+    compton &
     polybar vlsi &
 elif [[ $(hostname) == 'dada-pc' ]]; then
     setxkbmap -layout us -variant altgr-intl

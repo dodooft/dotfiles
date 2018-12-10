@@ -43,7 +43,7 @@ modules-center = clock
 modules-right = mpris network volume power
 
 [bar/vlsi]
-monitor = HDMI-1
+monitor = HDMI-2
 bottom = false
 
 width = 100%

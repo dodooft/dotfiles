@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'Dimercel/todo-vim'
 	Plug 'majutsushi/tagbar'
 	Plug 'lvht/tagbar-markdown'
-	Plug 'reedes/vim-pencil'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'itchyny/vim-cursorword'
 	Plug 'tpope/vim-fugitive'
@@ -28,6 +27,8 @@ let base16colorspace=256      " access colors present in 256 colorspace
 colorscheme base16-onedark
 syntax on
 highlight LineNr guibg=Ignore
+set tw=94
+set spell spelllang=en_us
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -55,6 +56,7 @@ set list listchars=tab:\→\ ,nbsp:·,trail:·
 " Char to separe words
 set iskeyword-=!-~,^*,^45,^124,^34,192-255,^_,^=,^/,^;,^:,^13,^10,>,<
 " Tab config
+set autoindent
 set smarttab
 set tabstop=4
 set shiftwidth=4
@@ -64,13 +66,8 @@ set softtabstop=0 noexpandtab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeMinimalUI = 1
 
-" Pencil
-let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-augroup END
+" 8 tab on python files
+autocmd FileType python setlocal tabstop=4 noexpandtab
 
 " Multi cursor
 let g:multi_cursor_next_key='<C-d>'

@@ -57,6 +57,13 @@ ctrl + alt + {Left,Right}
 ctrl + alt + {Down,Up}
     ~/Guit/PC/scripts/mdesk.sh 2 {prev,next}
 
+# Expand tiled space
+super + alt + {Left,Right}
+	{ bspc node @east -r -10 ; bspc node @west -r -10, bspc node @east -r +10 ; bspc node @west -r +10 }
+
+super + alt + {Down,Up}
+	{ bspc node @south -r +10 ; bspc node @north -r +10, bspc node @south -r -10 ; bspc node @north -r -10 }
+
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
