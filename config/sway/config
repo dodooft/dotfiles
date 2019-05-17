@@ -1,0 +1,94 @@
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+set $term termite
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Hotkeys
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+r reload
+bindsym $mod+w kill
+# Move window with mod+mouse drag
+floating_modifier $mod
+
+# Monitor config
+output HDMI-A-1 resolution 1440x900 position 1920,0
+output HDMI-A-2 resolution 1920x1080 position 0,0
+
+# Disable_window_borders
+for_window [class="^.*"] border pixel 0
+new_window pixel 1
+new_float  normal
+
+# Gaps
+set $default_gaps_inner 10
+set $default_gaps_outer 0
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+smart_gaps off
+
+# Focus
+focus_follows_mouse no
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# _move_ the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Make the current focus fullscreen
+bindsym $mod+m fullscreen
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+s floating toggle
+
+# Resize window with keyboard
+bindsym $mod+Ctrl+Left resize shrink width 5 px
+bindsym $mod+Ctrl+Up resize grow height 5 px
+bindsym $mod+Ctrl+Down resize shrink height 5 px
+
+
+# switch to workspace with mod+1234567890
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+
+#

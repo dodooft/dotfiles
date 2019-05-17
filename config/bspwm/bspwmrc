@@ -72,7 +72,7 @@ if [[ $(hostname) == 'dada-laptop' ]]; then
 elif [[ $(hostname) == 'VLSI-04' ]]; then
     setxkbmap latam
     bspc config -m 0x00200004 top_padding 0
-    compton &
+	#    compton &
     polybar vlsi &
 elif [[ $(hostname) == 'dada-pc' ]]; then
     setxkbmap -layout us -variant altgr-intl

@@ -97,6 +97,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec ssh-agent startx; fi
 
 cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
 
+export TERM=vt100
 export _JAVA_AWT_WM_NONREPARENTING=1
 alias vivado="/home/Xilinx/Vivado/2017.3/bin/vivado"
 alias vim="nvim"

@@ -11,7 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/vim-cursorword'
 	Plug 'tpope/vim-fugitive'
 	Plug 'posva/vim-vue'
-	Plug 'terryma/vim-multiple-cursors'
+	"Plug 'terryma/vim-multiple-cursors'
 	Plug 'w0rp/ale'
 	Plug 'lervag/vimtex'
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -70,7 +70,7 @@ let g:NERDTreeMinimalUI = 1
 autocmd FileType python setlocal tabstop=4 noexpandtab
 
 " Multi cursor
-let g:multi_cursor_next_key='<C-d>'
+"let g:multi_cursor_next_key='<C-d>'
 
 " Commentary
 autocmd FileType c,cpp,verilog setlocal commentstring=\/\/\ %s
