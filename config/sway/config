@@ -90,5 +90,25 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+input * xkb_layout latam
 
-#
+# Media
+
+bindsym $mod+Space exec rofi -show run
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
+
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+
+bindsym Print exec grim -g "$(slurp)" Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+
+# Monitor
+output HDMI-A-2 background "/home/jsoto/Pictures/Wallpapers/Cold Evening.jpg" fill
+
+# Start programs
+exec /usr/bin/waybar
+

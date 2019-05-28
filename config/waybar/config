@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery"],
+    "modules-right": ["custom/spotify", "custom/network", "pulseaudio", "battery"],
     "sway/window": {
         "max-length": 50
     },
@@ -18,29 +18,46 @@
 		}
     },
 
-"pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
-    "format-icons": {
-        "headphones": "",
-        "handsfree": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", ""]
-    },
-    "scroll-step": 1,
-    "on-click": "pavucontrol"
-},
+	"pulseaudio": {
+		"format": "{icon}  {volume}",
+		"format-muted": "  Mute",
+		"format-icons": {
+			"default": ["", ""]
+		},
+		"scroll-step": 5,
+		"tooltip": false,
+		"on-click": "pactl set-sink-mute 0 toggle"
+	},
 
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    "clock": {
-        "format": "{:%b %d  %H:%M}"
+
+	"clock": {
+		"format": "{:%b %d  %H:%M}",
+		"tooltip": false
+	},
+
+	"custom/spotify": {
+		"tooltip": false,
+		"format": "{}",
+		"max-length": 50,
+		"interval": 1,
+		"exec": "$HOME/.bin/mpris.sh 2> /dev/null", // Script in resources folder
+		"exec-if": "pgrep spotify",
+		"on-click": "playerctl play-pause",
+		"on-click-right": "$HOME/.bin/mpris.sh -t",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous"
+	},
+
+	"custom/network": {
+		"tooltip": false,
+		"format": "{}",
+		"interval": "once",
+		"exec": "$HOME/.bin/network.sh",
+		"on-click": "termite -e nmtui &"
     }
 }
 

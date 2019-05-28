@@ -35,7 +35,21 @@ window#waybar {
 
 #pulseaudio {
 	padding: 0 10px;
+}
 
+#pulseaudio.muted {
+	padding: 0 10px;
+	background: #F48F97;
+}
+
+#custom-spotify {
+	padding: 0 12px;
+	background: #25A2A6;
+}
+
+#custom-network {
+	padding: 0 12px;
+	background: transparent;
 }
 
 #clock {
