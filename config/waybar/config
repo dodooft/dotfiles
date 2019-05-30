@@ -1,11 +1,13 @@
 {
-    "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/spotify", "custom/network", "pulseaudio", "battery"],
-    "sway/window": {
-        "max-length": 50
-    },
+	"layer": "top",
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": ["clock"],
+	"modules-right": ["custom/spotify", "custom/network", "pulseaudio", "battery",
+		    "custom/suspend"],
+
+	"sway/window": {
+		"max-length": 50
+	},
 
 	"sway/workspaces": {
 		"disable-scroll": true,
@@ -16,7 +18,7 @@
 			"default": "",
 			"focused": ""
 		}
-    },
+	},
 
 	"pulseaudio": {
 		"format": "{icon}  {volume}",
@@ -29,10 +31,10 @@
 		"on-click": "pactl set-sink-mute 0 toggle"
 	},
 
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
 
 	"clock": {
 		"format": "{:%b %d  %H:%M}",
@@ -55,9 +57,16 @@
 	"custom/network": {
 		"tooltip": false,
 		"format": "{}",
-		"interval": "once",
+		"interval": 60,
 		"exec": "$HOME/.bin/network.sh",
 		"on-click": "termite -e nmtui &"
+    },
+
+	"custom/suspend": {
+		"tooltip": false,
+		"format": "",
+		"interval": "once",
+		"on-click": "systemctl suspend"
     }
 }
 

@@ -47,6 +47,11 @@ window#waybar {
 	background: #25A2A6;
 }
 
+#custom-suspend {
+	padding: 0 12px;
+	background: transparent;
+}
+
 #custom-network {
 	padding: 0 12px;
 	background: transparent;
