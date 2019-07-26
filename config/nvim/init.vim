@@ -65,6 +65,7 @@ set softtabstop=0 noexpandtab
 " NERD tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeMinimalUI = 1
+let g:NERDTreeChDirMode = 2
 
 " 8 tab on python files
 autocmd FileType python setlocal tabstop=4 noexpandtab
@@ -108,4 +109,10 @@ nnoremap <silent> <C-_>        :Commentary<CR>
 " Commands
 command! -nargs=* T 10sp | terminal <args>
 command!          TrimSpaces %s/\s\+$//e
+
+" GNVIM
+set guifont=Source\ Code\ Pro\ Semibold:h9
+let g:vn_font_size = 12
+
+
 

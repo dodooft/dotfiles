@@ -20,8 +20,8 @@ output HDMI-A-2 resolution 1920x1080 position 0,0
 
 # Disable_window_borders
 for_window [class="^.*"] border pixel 0
-new_window pixel 1
-new_float  normal
+default_border pixel 1
+#new_float  normal
 
 # Gaps
 set $default_gaps_inner 10
@@ -103,6 +103,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
+bindsym XF86Launch5 exec nautilus
+bindsym XF86Launch9 exec termite
 
 bindsym Print exec grim -g "$(slurp)" Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png')
 
@@ -111,4 +113,17 @@ output HDMI-A-2 background "/home/jsoto/Pictures/Wallpapers/Cold Evening.jpg" fi
 
 # Start programs
 exec /usr/bin/waybar
+exec_always gsettings set org.gnome.desktop.interface gtk-theme "Arc-Darker-solid"
+
+workspace 1 output "HDMI-A-2"
+workspace 2 output "HDMI-A-2"
+workspace 3 output "HDMI-A-2"
+workspace 4 output "HDMI-A-2"
+workspace 5 output "HDMI-A-2"
+workspace 6 output "HDMI-A-2"
+
+workspace 7 output "HDMI-A-1"
+workspace 8 output "HDMI-A-1"
+workspace 9 output "HDMI-A-1"
+workspace 10 output "HDMI-A-1"
 

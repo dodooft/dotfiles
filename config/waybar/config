@@ -2,8 +2,7 @@
 	"layer": "top",
 	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": ["clock"],
-	"modules-right": ["custom/spotify", "custom/network", "pulseaudio", "battery",
-		    "custom/suspend"],
+	"modules-right": ["custom/spotify", "custom/network", "pulseaudio", "battery", "custom/suspend"],
 
 	"sway/window": {
 		"max-length": 50
@@ -65,7 +64,7 @@
 	"custom/suspend": {
 		"tooltip": false,
 		"format": "",
-		"interval": "once",
+		"interval": "20",
 		"on-click": "systemctl suspend"
     }
 }
