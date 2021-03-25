@@ -100,8 +100,11 @@ cat ~/.ssh/id_rsa | SSH_ASKPASS="$HOME/.passfile" ssh-add - &>/dev/null
 export TERM=vt100
 export _JAVA_AWT_WM_NONREPARENTING=1
 #export GDK_BACKEND=wayland
-alias vivado="/home/Xilinx/Vivado/2017.3/bin/vivado"
+alias vivado="/home/Xilinx/Vivado/2019.2/bin/vivado"
 alias vim="nvim"
+alias vi="nvim"
 
 source /etc/profile.d/vte.sh
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
