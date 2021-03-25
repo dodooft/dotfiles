@@ -40,7 +40,7 @@ font-1 = FontAwesome:size=10;0
 
 modules-left = bspwm
 modules-center = clock
-modules-right = mpris network volume power
+modules-right = mpris network pulseaudio power
 
 [bar/vlsi]
 monitor = HDMI-2
@@ -103,8 +103,8 @@ format-underline = #fff
 #format-overline = #7a6
 format-padding = 3
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
 ;speaker_mixer = Speaker
 ;headphone_mixer = Headphone
 ;headphone_control_numid = 4
