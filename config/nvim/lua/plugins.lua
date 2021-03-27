@@ -2,7 +2,7 @@ return require('packer').startup(function()
 	use { 'wbthomason/packer.nvim', opt = true }
 	-- Development
 	use { 'b3nj5m1n/kommentary' }
-	use { 'airblade/vim-gitgutter' }
+	use { 'lewis6991/gitsigns.nvim' }
 	-- Markdown
 	use { 'npxbr/glow.nvim', run = ':GlowInstall' }
 	-- Color scheme
