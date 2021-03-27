@@ -3,6 +3,7 @@ return require('packer').startup(function()
 	-- Development
 	use { 'b3nj5m1n/kommentary' }
 	use { 'lewis6991/gitsigns.nvim' }
+	use { 'sakshamgupta05/vim-todo-highlight' }
 	-- Latex
 	use { 'lervag/vimtex' }
 	-- Markdown
