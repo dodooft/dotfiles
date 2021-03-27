@@ -36,6 +36,7 @@ bspc config normal_private_border_color     "#9B7046"
 bspc rule -a Nitrogen   state=floating
 #bspc rule -a Oblogout   layer=above focus=on monitor=1 state=fullscreen
 #rm -f "$xwin_cache"
+bspc rule -a Ulauncher border=off
 
 # Script files
 HIDEFILE="/tmp/panel_mpris"
@@ -56,6 +57,8 @@ fi
 xsetroot -cursor_name left_ptr &
 sxhkd &
 nitrogen --restore
+picom -b -CG --shadow-exclude 'class_g = "Ulauncher"' --no-fading-openclose --no-fading-destroyed-argb
+ulauncher --hide-window &
 
 i=1
 for monitor in $(bspc query -M); do

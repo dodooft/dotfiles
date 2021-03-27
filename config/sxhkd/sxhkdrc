@@ -15,8 +15,8 @@ XF86TouchpadToggle
 #
 
 # program launcher
-super + space
-	rofi -show drun -terminal termite -lines 8 -width 500
+#super + space
+#	rofi -show drun -terminal termite -lines 8 -width 500
 # terminal
 ctrl + super + Return
     termite
