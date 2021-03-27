@@ -3,6 +3,8 @@ return require('packer').startup(function()
 	-- Development
 	use { 'b3nj5m1n/kommentary' }
 	use { 'lewis6991/gitsigns.nvim' }
+	-- Latex
+	use { 'lervag/vimtex' }
 	-- Markdown
 	use { 'npxbr/glow.nvim', run = ':GlowInstall' }
 	-- Color scheme
