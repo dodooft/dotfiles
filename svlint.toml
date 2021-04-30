@@ -1,0 +1,4 @@
+[rules]
+tab_character = false
+wire_reg = true
+
