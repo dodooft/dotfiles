@@ -57,7 +57,7 @@ fi
 xsetroot -cursor_name left_ptr &
 sxhkd &
 nitrogen --restore
-picom -b -CG --shadow-exclude 'class_g = "Ulauncher"' --no-fading-openclose --no-fading-destroyed-argb
+picom -b --shadow-exclude 'class_g = "Ulauncher"' --no-fading-openclose --no-fading-destroyed-argb
 ulauncher --hide-window &
 
 i=1
