@@ -31,4 +31,5 @@ require('config.lsp')
 require('config.compe')
 require('config.kommentary')
 require('config.gitsigns')
+require('config.treesitter')
 
