@@ -2,10 +2,15 @@ return require('packer').startup(function()
 	use { 'wbthomason/packer.nvim', opt = true }
 	-- Development
 	use { 'b3nj5m1n/kommentary' }
-	use { 'lewis6991/gitsigns.nvim' }
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function() require('gitsigns').setup() end
+	}
 	use { 'sakshamgupta05/vim-todo-highlight' }
+	use { 'kdheepak/lazygit.nvim' }
 	-- Latex
-	use { 'lervag/vimtex' }
+	-- use { 'lervag/vimtex' }
+	use { 'jakewvincent/texmagic.nvim' }
 	-- Markdown
 	use { 'npxbr/glow.nvim', run = ':GlowInstall' }
 	-- Color scheme
@@ -17,18 +22,22 @@ return require('packer').startup(function()
 	use { 'nvim-telescope/telescope.nvim' }
 	-- LSP config
 	use { 'neovim/nvim-lspconfig' }
-	use { 'hrsh7th/nvim-compe' }
+	-- use { 'hrsh7th/nvim-compe' }
+	-- use { 'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe' }
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use { 'nvim-treesitter/playground' }
 	-- Status line
 	use {
-		'glepnir/galaxyline.nvim',
-		branch = 'main',
-		config = function() require'statusline' end,
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		"NTBBloodbath/galaxyline.nvim",
+		-- your statusline
+		config = function()
+		require("statusline")
+		end,
+		-- some optional icons
+		requires = { "kyazdani42/nvim-web-devicons", opt = true }
 	}
 	-- Buffer line
-	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	-- Telescope fzf
 	use { 'nvim-telescope/telescope-fzy-native.nvim' }
 	use {
@@ -36,5 +45,5 @@ return require('packer').startup(function()
 		requires = {'tpope/vim-obsession'} -- Continuously update session files
 	}
 	-- Waka time
-	use { 'wakatime/vim-wakatime' }
+	-- use { 'wakatime/vim-wakatime' }
 end)

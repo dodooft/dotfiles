@@ -11,7 +11,7 @@ local M = {}
 M.search_dotfiles = function() 
     require("telescope.builtin").find_files({
         prompt_title = "< VimRC >",
-        cwd = "$HOME/workspace/development/alpha2phi/dotfiles/",
+        cwd = "$HOME/.dotfiles/",
     })
 end
 

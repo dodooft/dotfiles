@@ -2,8 +2,8 @@ require'bufferline'.setup{
 	options = {
 		view = "default",
 		numbers = "none",
-		number_style = "",
-		mappings = true,
+		-- number_style = "",
+		-- mappings = true,
 		buffer_close_icon= '',
 		modified_icon = '●',
 		close_icon = '',

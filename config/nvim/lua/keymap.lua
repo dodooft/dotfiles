@@ -19,4 +19,8 @@ utils.map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 -- Buffer
 utils.map('n', '<A-Left>', '<C-W>h')
 utils.map('n', '<A-Right>', '<C-W>l')
-
+-- Replace
+-- utils.map('n', 'gr', 'gd[{V%::s/<C-R>///gc<left><left><left>')
+-- Others
+utils.map('n', '<leader>q', '<cmd>:q<cr>')
+utils.map('n', '<leader>w', '<cmd>:w<cr>')

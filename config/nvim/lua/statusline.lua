@@ -94,7 +94,7 @@ section.left[3] = {
   FileIcon = {
     provider = "FileIcon",
     condition = buffer_not_empty,
-    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, nord_colors.line_bg}
+    highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, nord_colors.line_bg}
   }
 }
 section.left[4] = {
@@ -115,14 +115,14 @@ section.right[1] = {
     provider = function()
       return " "
     end,
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
+    condition = require("galaxyline.providers.vcs").check_git_workspace,
     highlight = {nord_colors.orange, nord_colors.line_bg}
   }
 }
 section.right[2] = {
   GitBranch = {
     provider = "GitBranch",
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
+    condition = require("galaxyline.providers.vcs").check_git_workspace,
     separator = "",
     separator_highlight = {nord_colors.purple, nord_colors.bg},
     highlight = {nord_colors.orange, nord_colors.line_bg, "bold"}
@@ -231,7 +231,7 @@ section.short_line_left[1] = {
 section.short_line_left[2] = {
   SFileName = {
     provider = function()
-      local fileinfo = require("galaxyline.provider_fileinfo")
+      local fileinfo = require("galaxyline.providers.fileinfo")
       local fname = fileinfo.get_current_file_name()
       for _, v in ipairs(gl.short_line_list) do
         if v == vim.bo.filetype then
