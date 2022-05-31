@@ -12,7 +12,7 @@ return require('packer').startup(function()
 	-- use { 'lervag/vimtex' }
 	use { 'jakewvincent/texmagic.nvim' }
 	-- Markdown
-	use { 'npxbr/glow.nvim', run = ':GlowInstall' }
+	-- use { 'npxbr/glow.nvim', run = ':GlowInstall' }
 	-- Color scheme
 	use { 'ayu-theme/ayu-vim' }
 	use { 'kyazdani42/nvim-web-devicons' }
@@ -21,7 +21,11 @@ return require('packer').startup(function()
 	use { 'nvim-lua/popup.nvim' }
 	use { 'nvim-telescope/telescope.nvim' }
 	-- LSP config
-	use { 'neovim/nvim-lspconfig' }
+	use {
+		"williamboman/nvim-lsp-installer",
+		"neovim/nvim-lspconfig",
+	}
+	-- use { 'neovim/nvim-lspconfig' }
 	-- use { 'hrsh7th/nvim-compe' }
 	-- use { 'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe' }
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -40,10 +44,12 @@ return require('packer').startup(function()
 	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	-- Telescope fzf
 	use { 'nvim-telescope/telescope-fzy-native.nvim' }
-	use {
+	--[[ use {
 		'dhruvasagar/vim-prosession', -- Easy session switching and also auto-starts sessions
 		requires = {'tpope/vim-obsession'} -- Continuously update session files
-	}
+	} ]]
 	-- Waka time
 	-- use { 'wakatime/vim-wakatime' }
+	-- Copilot
+	use { 'github/copilot.vim' }
 end)
